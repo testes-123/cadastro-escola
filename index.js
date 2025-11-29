@@ -1,5 +1,3 @@
-const prompt = require("prompt-sync")()
-
 let alunos = []
 
 function cadastrarAluno() {
