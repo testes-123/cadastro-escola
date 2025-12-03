@@ -68,9 +68,16 @@ function alterarAluno() {
 
 let opcao = 0
 while (opcao !== 6) {
-    alert("===== Sistema de Cadastro de Escola =====\n1. Cadastrar aluno\n2. Listar alunos\n3. Ordenar alunos por nome\n4. Buscar aluno\n5. Alterar dados de aluno\n6. Sair")
-
-    opcao = parseInt(prompt("Escolha uma opção: "))
+    opcao = parseInt(prompt(
+        "===== Sistema de Cadastro de Escola =====\n" +
+        "1. Cadastrar aluno\n" +
+        "2. Listar alunos\n" +
+        "3. Ordenar alunos por nome\n" +
+        "4. Buscar aluno\n" +
+        "5. Alterar dados de aluno\n" +
+        "6. Sair\n\n" +
+        "Escolha uma opção:"
+    ))
 
     switch (opcao) {
         case 1:
