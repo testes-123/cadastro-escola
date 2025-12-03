@@ -12,18 +12,18 @@ function cadastrarAluno() {
     }
 
     alunos.push(aluno)
-    console.log(`Aluno ${nome} cadastrado com sucesso!\n`)
+    alert(`Aluno ${nome} cadastrado com sucesso!\n`)
 }
 
 function listarAlunos() {
     if (alunos.length === 0) {
-        console.log("Nenhum aluno cadastrado.\n")
+        alert("Nenhum aluno cadastrado.\n")
     } else {
-        console.log("Lista de alunos:")
+        let lista = "Lista de alunos:\n"
         for (let i = 0; i < alunos.length; i++) {
-            console.log(`${i + 1}. ${alunos[i].nome} - ${alunos[i].idade} anos - Série: ${alunos[i].serie}`)
+            lista += `${i + 1}. ${alunos[i].nome} - ${alunos[i].idade} anos - Série: ${alunos[i].serie}\n`
         }
-        console.log()
+        alert(lista)
     }
 }
 
@@ -33,7 +33,7 @@ const ordenarAlunosPorNome = () => {
         if (a.nome.toLowerCase() > b.nome.toLowerCase()) return 1
         return 0
     })
-    console.log("Alunos ordenados por nome!\n")
+    alert("Alunos ordenados por nome!\n")
 }
 
 function buscarAluno() {
@@ -41,9 +41,9 @@ function buscarAluno() {
     let encontrado = alunos.find(aluno => aluno.nome.toLowerCase() === nomeBusca.toLowerCase())
 
     if (encontrado) {
-        console.log(`Aluno encontrado: ${encontrado.nome} - ${encontrado.idade} anos - Série: ${encontrado.serie}\n`)
+        alert(`Aluno encontrado: ${encontrado.nome} - ${encontrado.idade} anos - Série: ${encontrado.serie}\n`)
     } else {
-        console.log("Aluno não encontrado.\n")
+        alert("Aluno não encontrado.\n")
     }
 }
 
@@ -60,21 +60,15 @@ function alterarAluno() {
         if (novaIdade) aluno.idade = parseInt(novaIdade)
         if (novaSerie) aluno.serie = novaSerie
 
-        console.log("Dados do aluno atualizados com sucesso!\n")
+        alert("Dados do aluno atualizados com sucesso!\n")
     } else {
-        console.log("Aluno não encontrado.\n")
+        alert("Aluno não encontrado.\n")
     }
 }
 
 let opcao = 0
 while (opcao !== 6) {
-    console.log("===== Sistema de Cadastro de Escola =====")
-    console.log("1. Cadastrar aluno")
-    console.log("2. Listar alunos")
-    console.log("3. Ordenar alunos por nome")
-    console.log("4. Buscar aluno")
-    console.log("5. Alterar dados de aluno")
-    console.log("6. Sair")
+    alert("===== Sistema de Cadastro de Escola =====\n1. Cadastrar aluno\n2. Listar alunos\n3. Ordenar alunos por nome\n4. Buscar aluno\n5. Alterar dados de aluno\n6. Sair")
 
     opcao = parseInt(prompt("Escolha uma opção: "))
 
@@ -95,9 +89,9 @@ while (opcao !== 6) {
             alterarAluno()
             break
         case 6:
-            console.log("Saindo do sistema...")
+            alert("Saindo do sistema...")
             break
         default:
-            console.log("Opção inválida! Tente novamente.\n")
+            alert("Opção inválida! Tente novamente.\n")
     }
 }
